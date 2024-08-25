@@ -1,117 +1,79 @@
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner(System.in);
+        Fornecedor fornecedor = new Fornecedor("Danilo", "R.Nova Aliança","(81)997812165",15000.0,500.0);
 
-        System.out.println("Nome do Fornecedor:");
-        String nomeFornecedor = scanner.nextLine();
-        System.out.println("Endereço do Fornecedor:");
-        String enderecoFornecedor = scanner.nextLine();
-        System.out.println("Telefone do Fornecedor:");
-        String telefoneFornecedor = scanner.nextLine();
-        System.out.println("Valor de crédito do Fornecedor:");
-        double valorCreditoFornecedor = scanner.nextDouble();
-        System.out.println("Valor da dívida do Fornecedor:");
-        double valorDividaFornecedor = scanner.nextDouble();
-        scanner.nextLine();
-
-        Fornecedor fornecedor = new Fornecedor(nomeFornecedor, enderecoFornecedor, telefoneFornecedor, valorCreditoFornecedor, valorDividaFornecedor);
-        System.out.println("Fornecedor: " + fornecedor.getNome());
+        System.out.println(" Fornecedor(a) ");
+        System.out.println("--------------------");
+        System.out.println("Nome: " + fornecedor.getNome());
         System.out.println("Endereço: " + fornecedor.getEndereco());
         System.out.println("Telefone: " + fornecedor.getTelefone());
-        System.out.println("Saldo do Fornecedor: " + fornecedor.obterSaldo());
+        System.out.println("Crédito:" + fornecedor.getValorCredito());
+        System.out.println("Dívida: " + fornecedor.getValorDivida());
+        System.out.println("Saldo: " + fornecedor.obterSaldo());
+        System.out.println("--------------------");
+        System.out.println();
 
-        System.out.println("\nNome do Empregado:");
-        String nomeEmpregado = scanner.nextLine();
-        System.out.println("Endereço do Empregado:");
-        String enderecoEmpregado = scanner.nextLine();
-        System.out.println("Telefone do Empregado:");
-        String telefoneEmpregado = scanner.nextLine();
-        System.out.println("Código do setor:");
-        int codigoSetor = scanner.nextInt();
-        System.out.println("Salário base:");
-        double salarioBase = scanner.nextDouble();
-        System.out.println("Imposto (%):");
-        double imposto = scanner.nextDouble();
-        scanner.nextLine();
+        Empregado empregado = new Empregado("João", "R.Leal de Barros ","(81)997968525",010,1500.0,10.0);
 
-        Empregado empregado = new Empregado(nomeEmpregado, enderecoEmpregado, telefoneEmpregado, codigoSetor, salarioBase, imposto);
-        System.out.println("Empregado: " + empregado.getNome());
+        System.out.println(" Empregado(a) " );
+        System.out.println("--------------------");
+        System.out.println("Nome: " + empregado.getNome());
         System.out.println("Endereço: " + empregado.getEndereco());
-        System.out.println("Telefone: " + empregado.getTelefone());
-        System.out.println("Salário do Empregado: " + empregado.calcularSalario());
+        System.out.println("Telefone: " +empregado.getTelefone());
+        System.out.println("Código do Setor: " + empregado.getCodigoSetor());
+        System.out.println("Salário Base: " + empregado.getSalarioBase());
+        System.out.println("Impostos: " + empregado.getImposto()+ "%");
+        System.out.println("Salário Líquido: " + empregado.calcularSalario());
+        System.out.println("--------------------");
+        System.out.println();
 
-        System.out.println("\nNome do Administrador:");
-        String nomeAdministrador = scanner.nextLine();
-        System.out.println("Endereço do Administrador:");
-        String enderecoAdministrador = scanner.nextLine();
-        System.out.println("Telefone do Administrador:");
-        String telefoneAdministrador = scanner.nextLine();
-        System.out.println("Código do setor:");
-        int codigoSetorAdm = scanner.nextInt();
-        System.out.println("Salário base:");
-        double salarioBaseAdm = scanner.nextDouble();
-        System.out.println("Imposto (%):");
-        double impostoAdm = scanner.nextDouble();
-        System.out.println("Valor da ajuda de custo:");
-        double ajudaDeCusto = scanner.nextDouble();
-        scanner.nextLine();
+        Administrador administrador = new Administrador("Helena", "R.Pereira Passos","(81)997056165",011,3500.0,15.0,1000.0);
 
-        Administrador administrador = new Administrador(nomeAdministrador, enderecoAdministrador, telefoneAdministrador, codigoSetorAdm, salarioBaseAdm, impostoAdm, ajudaDeCusto);
-        System.out.println("Administrador: " + administrador.getNome());
+        System.out.println(" Administrador(a) ");
+        System.out.println("--------------------");
+        System.out.println("Nome: " + administrador.getNome());
         System.out.println("Endereço: " + administrador.getEndereco());
         System.out.println("Telefone: " + administrador.getTelefone());
-        System.out.println("Salário do Administrador: " + administrador.calcularSalario());
+        System.out.println("Código do Setor:" + administrador.getCodigoSetor());
+        System.out.println("Salário Base: " + administrador.getSalarioBase());
+        System.out.println("Impostos: " + administrador.getImposto()+ "%");
+        System.out.println("Ajuda de Custo: " + administrador.getAjudaDeCusto());
+        System.out.println("Salário Líquido: " + administrador.calcularSalario());
+        System.out.println("--------------------");
+        System.out.println();
 
-        System.out.println("\nNome do Operário:");
-        String nomeOperario = scanner.nextLine();
-        System.out.println("Endereço do Operário:");
-        String enderecoOperario = scanner.nextLine();
-        System.out.println("Telefone do Operário:");
-        String telefoneOperario = scanner.nextLine();
-        System.out.println("Código do setor:");
-        int codigoSetorOperario = scanner.nextInt();
-        System.out.println("Salário base:");
-        double salarioBaseOperario = scanner.nextDouble();
-        System.out.println("Imposto (%):");
-        double impostoOperario = scanner.nextDouble();
-        System.out.println("Valor da produção:");
-        double valorProducao = scanner.nextDouble();
-        System.out.println("Comissão (%):");
-        double comissaoOperario = scanner.nextDouble();
-        scanner.nextLine();
+        Operario operario = new Operario("Danilo", "Rua Araripina","(81)997981236",012,2500,6.0,11000.0,6);
 
-        Operario operario = new Operario(nomeOperario, enderecoOperario, telefoneOperario, codigoSetorOperario, salarioBaseOperario, impostoOperario, valorProducao, comissaoOperario);
-        System.out.println("Operário: " + operario.getNome());
+        System.out.println(" Operário(a) ");
+        System.out.println("--------------------");
+        System.out.println("Nome: " + operario.getNome());
         System.out.println("Endereço: " + operario.getEndereco());
         System.out.println("Telefone: " + operario.getTelefone());
-        System.out.println("Salário do Operário: " + operario.calcularSalario());
+        System.out.println("Código do setor:" + operario.getCodigoSetor());
+        System.out.println("Salário Base: " + operario.getSalarioBase());
+        System.out.println("Imposto: " + operario.getImposto()+ "%");
+        System.out.println("Valor Produção: " + operario.getValorProducao());
+        System.out.println("Comissão: " + operario.getComissao());
+        System.out.println("Salário Líquido: " + operario.calcularSalario());
+        System.out.println("--------------------");
+        System.out.println();
 
-        System.out.println("\nNome do Vendedor:");
-        String nomeVendedor = scanner.nextLine();
-        System.out.println("Endereço do Vendedor:");
-        String enderecoVendedor = scanner.nextLine();
-        System.out.println("Telefone do Vendedor:");
-        String telefoneVendedor = scanner.nextLine();
-        System.out.println("Código do setor:");
-        int codigoSetorVendedor = scanner.nextInt();
-        System.out.println("Salário base:");
-        double salarioBaseVendedor = scanner.nextDouble();
-        System.out.println("Imposto (%):");
-        double impostoVendedor = scanner.nextDouble();
-        System.out.println("Valor das vendas:");
-        double valorVendas = scanner.nextDouble();
-        System.out.println("Comissão (%):");
-        double comissaoVendedor = scanner.nextDouble();
+        Vendedor vendedor = new Vendedor("Alice", "Rua do Brum","(81)996542565",013,3500,9.0,11000,6);
 
-        Vendedor vendedor = new Vendedor(nomeVendedor, enderecoVendedor, telefoneVendedor, codigoSetorVendedor, salarioBaseVendedor, impostoVendedor, valorVendas, comissaoVendedor);
-        System.out.println("Vendedor: " + vendedor.getNome());
+        System.out.println(" Vendedor(a) ");
+        System.out.println("--------------------");
+        System.out.println("Nome: " + vendedor.getNome());
         System.out.println("Endereço: " + vendedor.getEndereco());
         System.out.println("Telefone: " + vendedor.getTelefone());
-        System.out.println("Salário do Vendedor: " + vendedor.calcularSalario());
-
-        scanner.close();
+        System.out.println("Código do setor:" + vendedor.getCodigoSetor());
+        System.out.println("Salário Base: " + vendedor.getSalarioBase());
+        System.out.println("Imposto: " + vendedor.getImposto()+ "%");
+        System.out.println("Valor Venda: " + vendedor.getValorVendas());
+        System.out.println("Comissão: " + vendedor.getComissao());
+        System.out.println("Salário Líquido: " + vendedor.calcularSalario());
+        System.out.println("--------------------");
+       
     }
 }
